@@ -1,0 +1,3 @@
+package io.androidalatan.jsonparser.api
+
+interface NullToEmptyStringAdapter

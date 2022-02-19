@@ -1,0 +1,22 @@
+[versions]
+androidAnnotation = "1.1.0"
+moshi = "1.13.0"
+javaX = "1"
+kotlinPoet = "1.8.0"
+ksp = "1.6.10-1.0.3"
+kotlin = "1.6.10"
+
+[libraries]
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshiCompiler = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+androidAnnotation = { module = "androidx.annotation:annotation", version.ref = "androidAnnotation" }
+javaX = { module = "javax.inject:javax.inject", version.ref = "javaX" }
+kotlinPoet = { module = "com.squareup:kotlinpoet", version.ref = "kotlinPoet" }
+kspProcessingApi = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
+
+
+[plugins]
+androidLibrary = { id = "com.android.library", version = "7.1.1" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
