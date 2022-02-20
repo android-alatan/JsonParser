@@ -19,7 +19,6 @@ import com.squareup.kotlinpoet.STAR
 import com.squareup.kotlinpoet.TypeSpec
 import com.squareup.kotlinpoet.asClassName
 import com.squareup.kotlinpoet.buildCodeBlock
-import java.io.OutputStream
 import java.io.OutputStreamWriter
 import java.lang.reflect.Type
 import java.util.Locale
@@ -108,7 +107,9 @@ class JsonAdapterFactoryProcessor(
                                 addStatement("return when (TypeUtil.getRawType(type)) {")
                                 indent()
                                 kotlin.run {
-                                    targets.map { target -> target.simpleName.asString() + "::class.java -> " + target.simpleName.asString() + "JsonAdapter(moshi)" }
+                                    targets.map { target ->
+                                        "${target.simpleName.asString()}::class.java -> ${target.simpleName.asString()}JsonAdapter(moshi)"
+                                    }
                                         .forEach { state ->
                                             addStatement(state)
                                         }
@@ -136,7 +137,6 @@ class JsonAdapterFactoryProcessor(
                                                     addStatement(" || ${className}::class.java == type")
                                                 }
                                             }
-
                                     }
                                 unindent()
                             })
@@ -171,12 +171,6 @@ class JsonAdapterFactoryProcessor(
                 ?.let {
                     targets.add(classDeclaration)
                 }
-
         }
     }
-
-}
-
-private fun OutputStream.appendText(str: String) {
-    this.write(str.toByteArray())
 }

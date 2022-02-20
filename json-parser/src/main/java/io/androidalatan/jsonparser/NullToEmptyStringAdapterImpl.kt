@@ -24,5 +24,4 @@ class NullToEmptyStringAdapterImpl : NullToEmptyStringAdapter {
 
         return result ?: ""
     }
-
 }

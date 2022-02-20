@@ -12,5 +12,4 @@ object TypeUtil {
         }
         return clazz
     }
-
 }

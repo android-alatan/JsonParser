@@ -4,7 +4,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class PersonInfo(
-    val age:Int,
-    val name:String,
-    val home:String
+    val age: Int,
+    val name: String,
+    val home: String
 )

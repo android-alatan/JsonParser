@@ -1,11 +1,9 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.kotlinJvm)
-    alias(libs.plugins.detekt)
-    id("code-quality")
-    id("lib-tasks")
+    `kotlin-dsl`
+    `kotlin-dsl-precompiled-script-plugins`
 }
 
 dependencies {
-    api(libs.moshi)
 }

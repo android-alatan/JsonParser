@@ -1,7 +1,6 @@
 package io.androidalatan.jsonparser
 
 import com.squareup.moshi.JsonReader
-import io.androidalatan.jsonparser.NullToEmptyStringAdapterImpl
 import okio.Buffer
 import okio.ByteString.Companion.encodeUtf8
 import org.junit.jupiter.api.Assertions
@@ -26,5 +25,4 @@ class NullToEmptyStringAdapterImplTest {
         buffer.close()
         Assertions.assertEquals("", adapter.fromJson(JsonReader.of(buffer)))
     }
-
 }
