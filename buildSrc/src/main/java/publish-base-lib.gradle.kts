@@ -3,6 +3,12 @@ plugins {
 }
 
 afterEvaluate {
+
+    val isAndroid = plugins.hasPlugin("com.android.library")
+    tasks.create("buildForDeploy") {
+        dependsOn(if (isAndroid) "assembleRelease" else "assemble")
+    }
+
     val artifactName: String = name
 
     if (artifactName.contains("sample")) return@afterEvaluate
@@ -13,8 +19,6 @@ afterEvaluate {
     } else {
         return@afterEvaluate
     }
-
-    val isAndroid = plugins.hasPlugin("com.android.library")
 
     publishing {
         publications {
@@ -44,9 +48,7 @@ afterEvaluate {
         }
     }
 
-    tasks.create("buildForDeploy") {
-        dependsOn(if (isAndroid) "assembleRelease" else "assemble")
-    }
+
 }
 
 fun groupId(): String {
