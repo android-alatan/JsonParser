@@ -7,10 +7,11 @@ afterEvaluate {
 
     if (artifactName.contains("sample")) return@afterEvaluate
 
-    val libVersion: String = if (project.hasProperty("libVersion")) {
-        (project.property("libVersion") as String).substring(0, 7)
+    val libVersion: String
+    if (project.hasProperty("libVersion")) {
+        libVersion = project.property("libVersion") as String
     } else {
-        "dev"
+        return@afterEvaluate
     }
 
     val isAndroid = plugins.hasPlugin("com.android.library")
