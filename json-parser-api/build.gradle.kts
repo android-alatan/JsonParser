@@ -4,6 +4,7 @@ plugins {
     id(libs.plugins.detekt.get().pluginId)
     id("code-quality")
     id("libs-detekt")
+    id("publish-jvm")
 }
 
 dependencies {
