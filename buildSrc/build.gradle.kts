@@ -1,9 +1,10 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.kotlinJvm)
     `kotlin-dsl`
     `kotlin-dsl-precompiled-script-plugins`
 }
 
-dependencies {
+val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    languageVersion = libs.versions.kotlin.get()
 }
