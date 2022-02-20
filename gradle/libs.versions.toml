@@ -4,18 +4,22 @@ moshi = "1.13.0"
 javaX = "1"
 kotlinPoet = "1.8.0"
 ksp = "1.6.10-1.0.3"
-kotlin = "1.6.10"
+kotlin = { prefer = "1.6.10" }
 agp = "7.1.1"
 junit5 = "5.8.2"
 detekt = "1.19.0"
 kotlinDsl = "2.2.0"
+mavenPublish = "0.18.0"
+jacoco = "0.8.7"
 
 [libraries]
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshiCompiler = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 androidAnnotation = { module = "androidx.annotation:annotation", version.ref = "androidAnnotation" }
 javaX = { module = "javax.inject:javax.inject", version.ref = "javaX" }
+kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlinPoet = { module = "com.squareup:kotlinpoet", version.ref = "kotlinPoet" }
+ksp = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 kspProcessingApi = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 junit5 = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
@@ -23,6 +27,8 @@ jupiterEngine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref
 jupiterVintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit5" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 detektFormatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+jacoco = { module = "org.jacoco:org.jacoco.core", version.ref = "jacoco" }
+
 
 [plugins]
 #agp = { id = "com.android.tools.build", version.ref = "agp" }
@@ -32,3 +38,4 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }

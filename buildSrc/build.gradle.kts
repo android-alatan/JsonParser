@@ -8,3 +8,7 @@ val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
 compileKotlin.kotlinOptions {
     languageVersion = libs.versions.kotlin.get()
 }
+dependencies {
+    implementation(libs.detekt)
+    implementation(libs.kotlin)
+}
