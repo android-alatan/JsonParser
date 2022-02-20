@@ -12,6 +12,5 @@ class JsonAdapterFactoryProcessorProvider : SymbolProcessorProvider {
             logger = environment.logger,
             moduleName = environment.options["moduleName"]!!
         )
-
     }
 }

@@ -5,6 +5,9 @@ javaX = "1"
 kotlinPoet = "1.8.0"
 ksp = "1.6.10-1.0.3"
 kotlin = "1.6.10"
+agp = "7.1.1"
+junit5 = "5.8.2"
+detekt = "1.19.0"
 
 [libraries]
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
@@ -13,10 +16,18 @@ androidAnnotation = { module = "androidx.annotation:annotation", version.ref = "
 javaX = { module = "javax.inject:javax.inject", version.ref = "javaX" }
 kotlinPoet = { module = "com.squareup:kotlinpoet", version.ref = "kotlinPoet" }
 kspProcessingApi = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
-
+agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+junit5 = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
+jupiterEngine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
+jupiterVintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit5" }
+detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+detektFormatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 
 [plugins]
-androidLibrary = { id = "com.android.library", version = "7.1.1" }
+#agp = { id = "com.android.tools.build", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+androidApp = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
