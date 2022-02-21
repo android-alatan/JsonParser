@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  assmebleDebug:
+  assemble:
 
     runs-on: ubuntu-latest
 
@@ -35,7 +35,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build app package
+    - name: Build package
       run: ./gradlew assemble --stacktrace
 
     - name: Cleanup Gradle Cache
