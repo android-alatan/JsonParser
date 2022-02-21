@@ -71,12 +71,12 @@ class JsonAdapterFactoryProcessor(
 
         val fileSpec = FileSpec.builder(shortestPkgName, "${moduleName}JsonAdapterFactory")
             .addImport("com.squareup.moshi", "JsonAdapter", "Moshi", "Types")
-            .addImport(Type::class.java.packageName, "Type")
+            .addImport("java.lang.reflect", "Type")
             .addImport("io.androidalatan.json.moshi.adapter", "JsonAdapterFactory")
             .addImport("io.androidalatan.json.moshi.adapter.internal", "TypeUtil")
-            .let {
+            .let { builder ->
                 targets.map { declaration -> declaration.packageName.asString() to declaration.simpleName.asString() }
-                    .fold(it) { fileSpec, (packageName, className) ->
+                    .fold(builder) { fileSpec, (packageName, className) ->
                         fileSpec.addImport(packageName, className)
                     }
             }
