@@ -40,8 +40,7 @@ afterEvaluate {
                     url = uri("https://jitpack.io")
                     credentials {
                         // this should change to build local property manually once Gradle referring 1.5.0
-                        username = System.getenv("JITPACK_USERNAME")
-                        password = System.getenv("JITPACK_ACCESS_TOKEN")
+                        username = System.getenv("JITPACK_ACCESS_TOKEN")
                     }
                 }
             }
