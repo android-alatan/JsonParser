@@ -2,6 +2,8 @@ plugins {
     id("maven-publish")
 }
 
+group = groupId()
+
 afterEvaluate {
 
     val isAndroid = plugins.hasPlugin("com.android.library")
