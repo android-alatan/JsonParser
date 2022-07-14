@@ -1,16 +1,15 @@
 [versions]
-androidAnnotation = "1.1.0"
+androidAnnotation = "1.4.0"
 moshi = "1.13.0"
 javaX = "1"
-kotlinPoet = "1.8.0"
-ksp = "1.6.20-1.0.5"
-kotlin = { prefer = "1.6.20" }
-agp = "7.1.1"
+kotlinPoet = "1.12.0"
+ksp = "1.7.0-1.0.6"
+kotlin = "1.7.0"
+agp = "7.2.0"
 junit5 = "5.8.2"
-detekt = "1.19.0"
-kotlinDsl = "2.2.0"
+detekt = "1.20.0"
 mavenPublish = "0.18.0"
-jacoco = "0.8.7"
+jacoco = "0.8.8"
 
 [libraries]
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
