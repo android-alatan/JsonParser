@@ -3,6 +3,7 @@ plugins {
     id(libs.plugins.kotlinJvm.get().pluginId)
     id(libs.plugins.ksp.get().pluginId)
     id(libs.plugins.detekt.get().pluginId)
+    id("libs-detekt")
 }
 
 kotlin {
